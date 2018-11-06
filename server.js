@@ -1,24 +1,19 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import { buildSchema } from 'graphql';
+import schema from './src/schema.js';
+import routes from './src/routes.js';
 
-let schema = buildSchema(`
-	type Query {
-		hello: String
-	}
-`);
+let port = 4000;
 
-let root = {
-	hello: () => 'Hello world!'
-};
 
 let app = express();
 app.use('/graphql', graphqlHTTP({
 	schema: schema,
-	rootValue: root,
 	graphiql: true
 }));
 
-app.listen(4000, () => {
-	console.log('hosted on port 4000');
+routes(app);
+
+app.listen(port, () => {
+	console.log('hosted on port ' + port);
 })
