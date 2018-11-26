@@ -1,4 +1,5 @@
-import Food from './../data/food.js';
+import Food from './../data/food.json';
+import fs from 'fs';
 
 exports.getFood = (req, res) => {
 	return res.status(200).json({
@@ -50,7 +51,7 @@ exports.addFood = (req, res) => {
 	// check to see if required fields exist
 	// description and halal are optional which is why they have default values below
 	if (req.body.id && req.body.name) {
-		let id = Number.parseInt(req.params.id);
+		let id = Number.parseInt(req.body.id);
 		if (Number.isInteger(id)) {
 			let food = {
 				id: id,

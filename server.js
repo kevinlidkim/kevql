@@ -9,4 +9,4 @@ routes(app);
 
 app.listen(port, () => {
 	console.log('hosted on port ' + port);
-})
+});
