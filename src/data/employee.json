@@ -1,0 +1,52 @@
+[
+	{
+		"name": "kevin li",
+		"position": "developer",
+		"favoriteColor": "green"
+	},
+	{
+		"name": "zaid rashid",
+		"position": "developer",
+		"favoriteColor": "red"
+	},
+	{
+		"name": "rabab jamal",
+		"position": "qe",
+		"favoriteColor": "pizza"
+	},
+	{
+		"name": "anika jhalani",
+		"position": "ba",
+		"favoriteColor": "white"
+	},
+	{
+		"name": "matthaios konstantinou",
+		"position": "developer",
+		"favoriteColor": "purple"
+	},
+	{
+		"name": "william ciuarro",
+		"position": "developer",
+		"favoriteColor": "orange"
+	},
+	{
+		"name": "parth patel",
+		"position": "qe",
+		"favoriteColor": "yellow"
+	},
+	{
+		"name": "francesca bueti",
+		"position": "developer",
+		"favoriteColor": "black"
+	},
+	{
+		"name": "joyce pegler",
+		"position": "ba",
+		"favoriteColor": "blue"
+	},
+	{
+		"name": "hannan syed",
+		"position": "developer",
+		"favoriteColor": "brown"
+	}
+]

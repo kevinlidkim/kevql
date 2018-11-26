@@ -1,5 +1,4 @@
 import Food from './../data/food.json';
-import fs from 'fs';
 
 exports.getFood = (req, res) => {
 	return res.status(200).json({
