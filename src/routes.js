@@ -1,4 +1,4 @@
-import food from './controllers/food';
+import food from './endpoints/food';
 
 let routes = (app) => {
 
@@ -6,8 +6,10 @@ let routes = (app) => {
 	app.get('/food/:id', food.getFoodById);
 
 	app.get('*', (req, res) => {
-		console.log('sup');
-		return 'sup';
+		return res.status(200).json({
+			status: 'OK',
+			message: 'Server is up and running - try hitting an endpoint such as /food'
+		})
 	})
 };
 
