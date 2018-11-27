@@ -133,3 +133,36 @@ exports.updateEmployeeById = (req, res) => {
 		});
 	}
 }
+
+exports.deleteEmployeeById = (req, res) => {
+	if (db.get() === null) {
+		return res.status(500).json({
+			status: 'Error',
+			message: 'MongoDB is not connected yet'
+		});
+	}
+
+	let collection = db.get().collection('employee');
+	// make sure an id is provided
+	if (req.params.id && req.params.id.length === 24) {
+		collection.deleteOne({
+			_id: ObjectId(req.params.id)
+		}).then(() => {
+			return res.status(200).json({
+				status: 'OK',
+				message: 'Successfully deleted employee with id ' + req.params.id
+			});
+		}).catch((err) => {
+			console.error(err);
+			return res.status(500).json({
+				status: 'Error',
+				message: 'Failed to delete employee ' + req.params.id
+			});
+		})
+	} else {
+		return res.status(400).json({
+			status: 'Bad Request',
+			message: 'No id was passed in'
+		});
+	}
+}

@@ -12,6 +12,7 @@ let routes = (app) => {
 	app.get('/employee/:id', employee.getEmployeeById);
 	app.post('/employee', employee.addEmployee);
 	app.put('/employee/:id', employee.updateEmployeeById);
+	app.delete('/employee/:id', employee.deleteEmployeeById);
 
 	app.get('*', (req, res) => {
 		return res.status(200).json({
