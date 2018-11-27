@@ -8,8 +8,8 @@ let db = null;
 
 client.connect((err) => {
 	if (err) {
-		console.log('Error connecting to MongoDB');
-		console.log(err);
+		console.error('Error connecting to MongoDB');
+		console.error(err);
 	} else {
 		console.log('Successfully connected to MongoDB');
 		db = client.db(dbName);

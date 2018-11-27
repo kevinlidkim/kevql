@@ -8,8 +8,10 @@ let routes = (app) => {
 	app.post('/food', food.addFood);
 	app.delete('/food/:id', food.deleteFoodById);
 
-	app.get('/employee', employee.hello);
-	app.get('/em', employee.addEmployee);
+	app.get('/employee', employee.getEmployee);
+	app.get('/employee/:id', employee.getEmployeeById);
+	app.post('/employee', employee.addEmployee);
+	app.put('/employee/:id', employee.updateEmployeeById);
 
 	app.get('*', (req, res) => {
 		return res.status(200).json({

@@ -66,7 +66,7 @@ exports.addFood = (req, res) => {
 		} else {
 			return res.status(400).json({
 				status: 'Bad Request',
-				message: 'Id passed in is not an integer'
+				message: 'id passed in is not an integer'
 			});
 		}
 	} else {
@@ -102,7 +102,7 @@ exports.deleteFoodById = (req, res) => {
 		} else {
 			return res.status(400).json({
 				status: 'Bad Request',
-				message: 'Id passed in is not an integer'
+				message: 'id passed in is not an integer'
 			});
 		}
 	} else {

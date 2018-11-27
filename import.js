@@ -8,7 +8,7 @@ const dir = './src/data';
 
 client.connect((err) => {
 	if (err) {
-		console.log('Import script failed to connect to MongoDB')
+		console.error('Import script failed to connect to MongoDB')
 		process.exit();
 	} else {
 		importData(client.db(dbName));
@@ -19,8 +19,8 @@ let importData = (db) => {
 	console.log('Starting import process...');
 	fs.readdir(dir, (err, dataFiles) => {
 		if (err) {
-			console.log('Error reading directory');
-			console.log(err);
+			console.error('Error reading directory');
+			console.error(err);
 			client.close();
 			process.exit();
 		} else {
@@ -45,6 +45,6 @@ let importFile = (db, file) => {
 	let collection = db.collection(file.split('.')[0]); // grab the file name without the extension
 	// insert data into db
 	return collection.insertMany(data).catch((err) => {
-		console.log(err);
+		console.error(err);
 	});
 }
