@@ -1,12 +1,14 @@
 import db from '../../db.js';
 import { ObjectId } from 'mongodb';
 
+const MONGO_NOT_CONNECTED = {
+	status: 'Error',
+	message: 'MongoDB is not connected yet'
+};
+
 exports.getEmployee = (req, res) => {
 	if (db.get() === null) {
-		return res.status(500).json({
-			status: 'Error',
-			message: 'MongoDB is not connected yet'
-		});
+		return res.status(500).json(MONGO_NOT_CONNECTED);
 	}
 
 	let collection = db.get().collection('employee');
@@ -28,10 +30,7 @@ exports.getEmployee = (req, res) => {
 
 exports.addEmployee = (req, res) => {
 	if (db.get() === null) {
-		return res.status(500).json({
-			status: 'Error',
-			message: 'MongoDB is not connected yet'
-		});
+		return res.status(500).json(MONGO_NOT_CONNECTED);
 	}
 
 	let collection = db.get().collection('employee');
@@ -59,10 +58,7 @@ exports.addEmployee = (req, res) => {
 
 exports.getEmployeeById = (req, res) => {
 	if (db.get() === null) {
-		return res.status(500).json({
-			status: 'Error',
-			message: 'MongoDB is not connected yet'
-		});
+		return res.status(500).json(MONGO_NOT_CONNECTED);
 	}
 
 	let collection = db.get().collection('employee');
@@ -101,10 +97,7 @@ exports.getEmployeeById = (req, res) => {
 
 exports.updateEmployeeById = (req, res) => {
 	if (db.get() === null) {
-		return res.status(500).json({
-			status: 'Error',
-			message: 'MongoDB is not connected yet'
-		});
+		return res.status(500).json(MONGO_NOT_CONNECTED);
 	}
 
 	let collection = db.get().collection('employee');
@@ -136,10 +129,7 @@ exports.updateEmployeeById = (req, res) => {
 
 exports.deleteEmployeeById = (req, res) => {
 	if (db.get() === null) {
-		return res.status(500).json({
-			status: 'Error',
-			message: 'MongoDB is not connected yet'
-		});
+		return res.status(500).json(MONGO_NOT_CONNECTED);
 	}
 
 	let collection = db.get().collection('employee');
